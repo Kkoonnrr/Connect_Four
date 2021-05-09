@@ -32,34 +32,19 @@ Opis zadania
 
 Testy
 
-1.  Wykonanie po dwa ruchy przez każdego z graczy - monety spadają na
-    > dół pola gry lub zatrzymują się na już wrzuconym żetonie.
+1.  Wykonanie po dwa ruchy przez każdego z graczy - monety spadają nadół pola gry lub zatrzymują się na już wrzuconym żetonie.
 
-2.  Ułożenie pionowej linii monet przez jednego gracza - oczekiwana
-    > informacja o jego wygranej.
+2.  Ułożenie pionowej linii monet przez jednego gracza - oczekiwanainformacja o jego wygranej.
 
-3.  Ułożenie poziomej linii monet przez drugiego gracza - oczekiwana
-    > informacja o jego wygranej.
+3.  Ułożenie poziomej linii monet przez drugiego gracza - oczekiwanainformacja o jego wygranej.
 
-4.  Ułożenie skośnej linii przez dowolnego gracza - oczekiwana
-    > informacja o
+4.  Ułożenie skośnej linii przez dowolnego gracza - oczekiwanainformacja o jego wygranej.
 
-> jego wygranej.
+1.  Zapełnienie pola gry tak, że żaden gracz nie ułożył linii -oczekiwana informacja o remisie.
 
-1.  Zapełnienie pola gry tak, że żaden gracz nie ułożył linii -
-    > oczekiwana informacja o remisie.
+2.  Ułożenie linii dłuższej niż 4 przez jednego z graczy - oczekiwana informacja o jego wygranej. \[c\]\[c\]\[c\]\[ \]\[cl\[c\]\[c\]\[k\]\[z\]\[2\]\[ \]\[z\]\[ż\]\[ż\] &lt;- w następnym mchu gracz żółty wrzuci monetę w środkową kolumnę.
 
-2.  Ułożenie linii dłuższej niż 4 przez jednego z graczy - oczekiwana
-    > informacja o jego wygranej. \[c\]\[c\]\[c\]\[ \]\[cl\[c\]\[c\]
-    > \[k\]\[z\]\[2\]\[ \]\[z\]\[ż\]\[ż\] &lt;- w następnym mchu gracz
-    > żółty wrzuci monetę w
+1.  Próba wrzucenia monety do zapełnionej kolumny - oczekiwana informacja o błędzie.
 
-> środkową kolumnę.
-
-1.  Próba wrzucenia monety do zapełnionej kolumny - oczekiwana
-    > informacja o błędzie.
-
-> GitHub:
->
-> [Kkoonnrr/Connect\_Four
-> (github.com)](https://github.com/Kkoonnrr/Connect_Four)
+GitHub:
+[Kkoonnrr/Connect\_Four(github.com)](https://github.com/Kkoonnrr/Connect_Four)
