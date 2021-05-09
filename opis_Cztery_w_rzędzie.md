@@ -1,4 +1,5 @@
-> 6\. Cztery w rzędzie *(httos://enswikiDedia.oro/wiki/Connect Four)*
+6\. Cztery w rzędzie 
+*(https://en.wikipedia.org/wiki/Connect_Four)*
 
 Opis zadania
 
@@ -8,7 +9,7 @@ Opis zadania
 
 -   Gracze na zmianę wrzucają monety do wybranych przez siebie kolumn.
 
--   Pola w których jest moneta gracza 1 są czerwone, pola z monetami gracza 2 są żółte (tkinter, Canvas, [*http://stackoverflow.com/a/12254442).*](http://stackoverflow.com/a/12254442).)
+-   Pola w których jest moneta gracza 1 są czerwone, pola z monetami gracza 2 są żółte (tkinter, Canvas, [*http://stackoverflow.com/a/12254442*](http://stackoverflow.com/a/12254442)).
 
 -   Gracze wybierają kolumnę klikając przycisk nad nią.
 
