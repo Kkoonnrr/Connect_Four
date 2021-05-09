@@ -2,33 +2,21 @@
 
 Opis zadania
 
--   Okno wyświetlające siatkę 7 kolumn x 6 wierszy, przycisk nad każdą
-    > kolumną, informację "Tura gracza 1" lub "Tura gracza 2", przycisk
-    > do resetowania gry oraz rozwijalną listę wyboru reguł gry.
+-   Okno wyświetlające siatkę 7 kolumn x 6 wierszy, przycisk nad każdą kolumną, informację "Tura gracza 1" lub "Tura gracza 2", przycisk do resetowania gry oraz rozwijalną listę wyboru reguł gry.
 
 -   Początkowo pola siatki są puste.
 
 -   Gracze na zmianę wrzucają monety do wybranych przez siebie kolumn.
 
--   Pola w których jest moneta gracza 1 są czerwone, pola z monetami
-    > gracza 2
-
-> są żółte (tkinter, Canvas
-> [*http://stackoverflow.com/a/12254442).*](http://stackoverflow.com/a/12254442).)
+-   Pola w których jest moneta gracza 1 są czerwone, pola z monetami gracza 2 są żółte (tkinter, Canvas, [*http://stackoverflow.com/a/12254442).*](http://stackoverflow.com/a/12254442).)
 
 -   Gracze wybierają kolumnę klikając przycisk nad nią.
 
--   Wygrywa gracz który pierwszy ustawi cztery monety w linii (poziomo,
-    > pionowo lub po skosie).
+-   Wygrywa gracz który pierwszy ustawi cztery monety w linii (poziomo, pionowo lub po skosie).
 
--   Gdy gra się kończy, wyświetlane jest okienko z napisem 'Wygrał gracz
-    > 1" lub "Wygrał gracz 2", zależnie kto wygrał grę. Możliwe jest
-    > zresetowanie planszy bez zamykania głównego okna.
+-   Gdy gra się kończy, wyświetlane jest okienko z napisem 'Wygrał gracz 1" lub "Wygrał gracz 2", zależnie kto wygrał grę. Możliwe jest zresetowanie planszy bez zamykania głównego okna.
 
--   Reprezentacja reguł gry ma być realizowana poprzez hierarchię Mas.
-    > Klasa bazowa definiuje między innymi funkcję wirtualną ktoWygral()
-    > nadpisywaną w klasach pochodnych. Realizowane powinny być
-    > przynajmniej dwa zestawy reguł, jako dwie klasy pochodne.
+-   Reprezentacja reguł gry ma być realizowana poprzez hierarchię Mas. Klasa bazowa definiuje między innymi funkcję wirtualną ktoWygral() nadpisywaną w klasach pochodnych. Realizowane powinny być przynajmniej dwa zestawy reguł, jako dwie klasy pochodne.
 
 Testy
 
