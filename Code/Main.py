@@ -2,6 +2,8 @@ import pygame
 import math
 from tkinter import *
 from Code.WrongMoveError import WrongMoveError
+
+'''Colors'''
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
@@ -9,8 +11,10 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
 RADIUS = 45
+'''Board size'''
 ROW_COUNT = 6
 COLUMN_COUNT = 7
+'''One column size in pixels'''
 SIZE = 100
 
 
@@ -26,16 +30,20 @@ class Mode:
     def winning_check(self, sign):
         raise NotImplementedError('No mode')
 
+    '''Creating board'''
     def create_board(self):
         self.board = [[0 for i in range(7)] for i in range(6)]
         return self.board
 
+    '''Drop coin'''
     def drop(self, col, row, sign):
         self.board[row][col] = sign
 
+    '''Checks if the coin location is correct'''
     def correct_location(self, col):
         return self.board[0][col] == 0
 
+    '''Finds next free space in column'''
     def next_free_space(self, col):
         i = ROW_COUNT
         while i >= 0:
@@ -45,6 +53,7 @@ class Mode:
         else:
             raise WrongMoveError
 
+    '''Draws board'''
     def draw_board(self):
         for c in range(COLUMN_COUNT):
             for r in range(ROW_COUNT):
@@ -57,6 +66,7 @@ class Mode:
                     pygame.draw.circle(self.screen, YELLOW, (c * SIZE + SIZE / 2, r * SIZE + SIZE + SIZE / 2), RADIUS)
         pygame.display.update()
 
+    '''Checks if specific button was pressed'''
     def button_pressed(self, w, h, but):
         pos_m = pygame.mouse.get_pos()
         pos = but.get_pos()
@@ -65,6 +75,7 @@ class Mode:
         else:
             return False
 
+    '''Changes game mode'''
     def selected_mode(self, w, h, new_mode, old_mode, text, text2):
         pos_m = pygame.mouse.get_pos()
         pos = new_mode.get_pos()
@@ -80,6 +91,7 @@ class Mode:
         else:
             return False
 
+    '''Reset all board'''
     def reset(self):
         for i in range(0, len(self.board)):
             for j in range(0, len(self.board[0])):
@@ -91,6 +103,7 @@ class Mode:
         self.draw_board()
         return tur
 
+    '''Prints information who wins'''
     def won(self, who):
         if who == 0:
             self.screen.blit(self.myfont.render("Player 1 wins! Congratulation", False, WHITE), (100, 400))
@@ -102,9 +115,13 @@ class Mode:
     def get_board(self):
         return self.board
 
+    '''Checks if board is full'''
     def full_board(self):
         return not any(0 in ROW_COUNT for ROW_COUNT in self.board)
+
+
 class FourInRow(Mode):
+    '''Check if this move wins'''
     def winning_check(self, sign):
         # horizontal
         for c in range(COLUMN_COUNT - 3):
@@ -133,6 +150,7 @@ class FourInRow(Mode):
 
 
 class FiveInRow(Mode):
+    '''Check if this move wins'''
     def winning_check(self, sign):
         # horizontal
         for c in range(COLUMN_COUNT - 4):
@@ -167,17 +185,20 @@ class Screen:
         self.h = h
         self.current = False
 
+    '''Makes specific screen main one'''
     def make_current(self):
         pygame.display.set_caption(self.title)
         self.current = True
         self.screen = pygame.display.set_mode((self.w, self.h))
 
+    '''Makes specific screen second one'''
     def not_current(self):
         self.current = False
 
     def get_screen(self):
         return self.screen
 
+    '''Fills screen with black'''
     def update(self):
         if self.current:
             self.screen.fill(BLACK)
@@ -193,10 +214,12 @@ class Button:
         self.i = i
         self.window = window
 
+    '''Draws columns numbers'''
     def draw(self):
         pygame.draw.rect(self.window, WHITE, (self.x, self.y, self.w, self.h))
         self.window.blit(self.font.render(str(self.i+1), False, BLACK), (self.x + 10, self.y - 10))
 
+    '''Draws text buttons'''
     def draw_text(self, text):
         pygame.draw.rect(self.window, WHITE, (self.x, self.y, self.w, self.h))
         self.window.blit(self.font.render(text, False, BLACK), (self.x + 10, self.y - 5))
