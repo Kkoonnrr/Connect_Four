@@ -1,7 +1,7 @@
-import numpy as np
 import pygame
 import math
 from tkinter import *
+from Code.WrongMoveError import WrongMoveError
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
@@ -27,7 +27,7 @@ class Mode:
         raise NotImplementedError('No mode')
 
     def create_board(self):
-        self.board = np.zeros((ROW_COUNT, COLUMN_COUNT))
+        self.board = [[0 for i in range(7)] for i in range(6)]
         return self.board
 
     def drop(self, col, row, sign):
@@ -42,6 +42,8 @@ class Mode:
             i -= 1
             if self.board[i][col] == 0:
                 return i
+        else:
+            raise WrongMoveError
 
     def draw_board(self):
         for c in range(COLUMN_COUNT):
@@ -100,7 +102,8 @@ class Mode:
     def get_board(self):
         return self.board
 
-
+    def full_board(self):
+        return not any(0 in ROW_COUNT for ROW_COUNT in self.board)
 class FourInRow(Mode):
     def winning_check(self, sign):
         # horizontal
@@ -267,6 +270,7 @@ def main():
                                     pygame.display.update()
                                     print("Player 1 Wins")
                                     game_over = True
+                                    mode = FourInRow(screen, myfont, otherfont, board)
                                 turn += 1
                                 turn = turn % 2
                         else:
@@ -285,6 +289,7 @@ def main():
                                     pygame.display.update()
                                     print("Player 2 Wins")
                                     game_over = True
+                                    mode = FourInRow(screen, myfont, otherfont, board)
                                 turn += 1
                                 turn = turn % 2
                         print(board)
