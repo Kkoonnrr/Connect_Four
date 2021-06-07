@@ -40,6 +40,7 @@ class MyTestCase(unittest.TestCase):
         self.four_in_row.drop(0, 3, 1)
     # then
         self.assertTrue(self.four_in_row.winning_check(1))
+
     def test_win_diagonal(self):
     # given
         self.four_in_row.create_board()
@@ -50,14 +51,15 @@ class MyTestCase(unittest.TestCase):
         self.four_in_row.drop(3, 3, 1)
     # then
         self.assertTrue(self.four_in_row.winning_check(1))
+        
     def test_is_board_full(self):
     #given
         self.four_in_row.board = [[2, 2, 2, 1, 2, 2, 2],
-                           [1, 1, 1, 2, 1, 1, 1],
-                           [2, 2, 2, 1, 2, 2, 2],
-                           [1, 1, 1, 2, 1, 1, 1],
-                           [2, 2, 2, 1, 2, 2, 2],
-                           [1, 1, 1, 2, 1, 1, 1]]
+                                 [1, 1, 1, 2, 1, 1, 1],
+                                 [2, 2, 2, 1, 2, 2, 2],
+                                 [1, 1, 1, 2, 1, 1, 1],
+                                 [2, 2, 2, 1, 2, 2, 2],
+                                 [1, 1, 1, 2, 1, 1, 1]]
     # when
         full = self.four_in_row.full_board()
     # then
